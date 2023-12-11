@@ -1,0 +1,29 @@
+def encode_message(text):
+    # Define mapping (you can modify this as needed)
+    mapping = {
+        'a': 'z', 'b': 'x', 'c': 'y', 'd': 'w', 'e': 'v', 'f': 'u', 'g': 't',
+        'h': 's', 'i': 'r', 'j': 'q', 'k': 'p', 'l': 'o', 'm': 'n', 'n': 'm',
+        'o': 'l', 'p': 'k', 'q': 'j', 'r': 'i', 's': 'h', 't': 'g', 'u': 'f',
+        'v': 'e', 'w': 'd', 'x': 'c', 'y': 'b', 'z': 'a',
+        'A': 'Z', 'B': 'X', 'C': 'Y', 'D': 'W', 'E': 'V', 'F': 'U', 'G': 'T',
+        'H': 'S', 'I': 'R', 'J': 'Q', 'K': 'P', 'L': 'O', 'M': 'N', 'N': 'M',
+        'O': 'L', 'P': 'K', 'Q': 'J', 'R': 'I', 'S': 'H', 'T': 'G', 'U': 'F',
+        'V': 'D', 'W': 'E', 'X': 'C', 'Y': 'B', 'Z': 'A'
+    }
+
+    encoded_text = ''
+    for char in text:
+#If the character is a letter then replace it using the mapping, otherwise keep it unchanged
+        if char.isalpha():
+            encoded_text += mapping.get(char, char)
+        else:
+            encoded_text += char
+
+    return encoded_text
+
+# Taking user input for the text to be encoded
+input_text = input("Enter the text to encode: ")
+
+# Encoding the input text
+encoded_message = encode_message(input_text)
+print("Encoded message:", encoded_message)
